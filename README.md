@@ -24,3 +24,9 @@
 - NetflixtGPT
      - Search Bar
      - Movie Suggetions                   
+
+# Deploy
+   
+   -  Install firebase CLI = 'NPM I -g firebase-tools'
+   - Firebase Login - 'firebase init', then select hosting
+   -  Deploy command - 'firebase deploy'
