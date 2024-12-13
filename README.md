@@ -8,6 +8,8 @@
 - SignUp Form
 - Form Validation
 - useRef Hook
+- Firebase Setup
+- Deploying our app to production
 
 
 # Features
@@ -28,5 +30,5 @@
 # Deploy
    
    -  Install firebase CLI = 'NPM I -g firebase-tools'
-   - Firebase Login - 'firebase init', then select hosting
+   -  Firebase Login - 'firebase init', then select hosting
    -  Deploy command - 'firebase deploy'
