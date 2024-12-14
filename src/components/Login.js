@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import {
@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -13,6 +14,8 @@ const Login = () => {
 
   const email = useRef(null);
   const password = useRef(null);
+
+  const navigate = useNavigate();
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -34,6 +37,7 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -50,6 +54,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -57,6 +62,8 @@ const Login = () => {
           setErrorMessage(errorCode + "-" + errorMessage);
         });
     }
+
+    
   };
 
   return (
