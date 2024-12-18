@@ -5,7 +5,6 @@ const Browse = () => {
   return (
     <div>
       <Header/>
-      <h2>Browse</h2>
       <div>
       </div>
     </div>
