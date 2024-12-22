@@ -4,6 +4,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -41,8 +42,12 @@ const Header = () => {
     });
   }, []);
 
+  const handleGptSearch = () => {
+    dispatch(toggleGptSearchView())
+  }
+
   return (
-    <div className="absolute shadow bg-gradient-to-b from-black  w-screen z-10 flex justify-between">
+    <div className="absolute shadow bg-gradient-to-b from-black  w-screen z-10 flex justify-between text-center">
       <img
         className="w-40  ms-[90px] "
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
@@ -51,12 +56,15 @@ const Header = () => {
 
       {user && (
         <div className="flex p-2">
-          <img className="w-12 h-12" src={user.photoUrl} alt="usericon" />
-          <button className="mx-5 text-white font-bold" onClick={handleSignOut}>
+          {/* <img className="w-12 h-12" src={user.photoUrl} alt="usericon" /> */}
+          <button className="bg-purple-600 mx-5 px-3 h-10 mt-3 rounded-lg text-white font-bold" onClick={handleGptSearch}>GPT Search</button>
+          <img className="w-8 h-8 mt-3" src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg" alt="usericon" />
+          <button className="mr-5 ml-1 text-white font-bold" onClick={handleSignOut}>
             sign out
           </button>
         </div>
       )}
+      {console.log(user)}
     </div>
   );
 };
