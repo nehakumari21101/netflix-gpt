@@ -4,8 +4,6 @@ import MovieList from './MovieList';
 
 const SecondryContainer = () => {
   const movies = useSelector((store) => store.movies);
-  console.log("now", movies.nowPlayingMovies);
-  console.log("upcoming", movies.upcomingMovies)
   return (
     <div className='bg-black m-0 -mt-36 text-white'>
       <MovieList title={"Now playing"} movies={movies.nowPlayingMovies}/>
