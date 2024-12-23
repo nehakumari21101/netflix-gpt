@@ -42,7 +42,7 @@ const Header = () => {
     });
   }, []);
 
-  const handleGptSearch = () => {
+  const handleGptSearchClick = () => {
     dispatch(toggleGptSearchView())
   }
 
@@ -57,7 +57,7 @@ const Header = () => {
       {user && (
         <div className="flex p-2">
           {/* <img className="w-12 h-12" src={user.photoUrl} alt="usericon" /> */}
-          <button className="bg-purple-600 mx-5 px-3 h-10 mt-3 rounded-lg text-white font-bold" onClick={handleGptSearch}>GPT Search</button>
+          <button className="bg-purple-600 mx-5 px-3 h-10 mt-3 rounded-lg text-white font-bold" onClick={handleGptSearchClick}>GPT Search</button>
           <img className="w-8 h-8 mt-3" src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg" alt="usericon" />
           <button className="mr-5 ml-1 text-white font-bold" onClick={handleSignOut}>
             sign out
