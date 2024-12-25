@@ -91,7 +91,6 @@ const Header = () => {
 
         </div>
       )}
-      {console.log(user)}
     </div>
   );
 };

@@ -9,3 +9,4 @@ export const OPTIONS_API = {
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 
+export const OPENAI_API = "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";
