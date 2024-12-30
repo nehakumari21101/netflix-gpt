@@ -5,7 +5,7 @@ import MovieList from './MovieList';
 const SecondryContainer = () => {
   const movies = useSelector((store) => store.movies);
   return (
-    <div className='bg-black m-0 -mt-36 text-white'>
+    <div className='bg-black -mt-10 sm:-mt-10 md:-mt-36 text-white'>
       <MovieList title={"Now playing"} movies={movies.nowPlayingMovies}/>
       <MovieList title={"Popular"} movies={movies.popularMovies}/>
       <MovieList title={"Top Rated"} movies={movies.topRatedMovies}/>

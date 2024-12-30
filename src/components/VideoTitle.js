@@ -3,8 +3,8 @@ import React from "react";
 const VideoTitle = ({ title, overview }) => {
   return (
     <div className="px-12  mt-72 absolute text-white">
-      <h1 className="font-bold text-3xl">{title}</h1>
-      <p className="w-2/5 py-3 ">{overview}</p>
+      <h1 className="font-bold text-lg mt-5 md:mt-0 md:text-3xl">{title}</h1>
+      <p className="w-2/5 py-3 hidden md:inline-block">{overview}</p>
       <button className="bg-white text-black p-2 px-8 text-xl hover:bg-opacity-80 rounded-lg mr-2">
         Video
       </button>

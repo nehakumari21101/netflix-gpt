@@ -53,15 +53,15 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute shadow bg-gradient-to-b from-black  w-screen z-10 flex justify-between text-center">
+    <div className="absolute shadow bg-gradient-to-b from-black sm:bg-blue-950 md:bg-green-950 w-screen z-10 flex flex-col sm:flex-row md:flex-row justify-between text-center">
       <img
-        className="w-40  ms-[90px] "
+        className="w-40 mx-auto md:ms-[90px]  "
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
         alt="logo"
       />
 
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2  ml-[20%] sm:m-0 md:m-0">
           {/* <img className="w-12 h-12" src={user.photoUrl} alt="usericon" /> */}
           {showGptSearch && (
             <select

@@ -7,28 +7,38 @@ const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
 
-  const handleGptSearchClick = async() =>{
+  const handleGptSearchClick = async () => {
     // console.log(searchText.current.value);
 
-    const gptQuery = "Act as a movie Recommendation system suggest some movies for the query:" + searchText.current.value + ". Only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, koi mil gaya";
+    const gptQuery =
+      "Act as a movie Recommendation system suggest some movies for the query:" +
+      searchText.current.value +
+      ". Only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, koi mil gaya";
 
     const gptResults = await openai.chat.completions.create({
-      messages: [{ role: 'user', content: gptQuery }],
-      model: 'gpt-3.5-turbo',
+      messages: [{ role: "user", content: gptQuery }],
+      model: "gpt-3.5-turbo",
     });
     console.log(gptResults.choices);
-  }
+  };
 
   return (
-    <div className="m-[10%] flex justify-center  h-16 items-center ">
-      <form action="" className="  bg-black  w-[75%] p-5" onSubmit={(e)=>e.preventDefault()}>
+    <div className="pt-[45%] sm:pt-[30%] md:pt-[15%] flex justify-center  h-16 items-center ">
+      <form
+        action=""
+        className="  bg-black w-[90%] md:w-[55%] p-5 border"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <input
           ref={searchText}
           type="text"
           placeholder={lang[langKey].placeholder}
-          className=" mx-2 w-[70%] h-11 pl-5"
+          className=" mx-2 w-[70%] h-11 pl-1 md:pl-5"
         />
-        <button className="bg-red-600 rounded-lg text-white text-bold w-[20%] h-11 ml-5" onClick={handleGptSearchClick}>
+        <button
+          className="bg-red-600 rounded-lg text-white text-bold w-[20%] h-11  ml-1 md:ml-5"
+          onClick={handleGptSearchClick}
+        >
           {lang[langKey].search}
         </button>
       </form>
